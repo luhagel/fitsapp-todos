@@ -19,7 +19,7 @@ enum TodoPriority: Int {
 class Todo: Object {
     dynamic var title: String = ""
     dynamic var priority: TodoPriority = .none
-    dynamic var modificationDate = NSDate()
+    dynamic var modificationDate = Date()
   
     @objc enum TodoPriority: Int {
         case none = 0

@@ -20,6 +20,8 @@ class TodoListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.showNewTodoAlertController))
+        
         todos = RealmHelper.getTodos(sorted: .byDate)
     }
 
@@ -37,12 +39,45 @@ class TodoListTableViewController: UITableViewController {
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListCell", for: indexPath) as! TodoItemTableViewCell
+        let todo = todos[indexPath.row]
 
-        // Configure the cell...
-        cell.todoTitleLabel.text = "Test Todo"
-        cell.todoDateLabel.text = "Today"
+        cell.todoTitleLabel.text = todo.title
+        cell.todoDateLabel.text = todo.modificationDate.shortDate
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            RealmHelper.removeTodo(todo: todos[indexPath.row])
+            todos = RealmHelper.getTodos(sorted: .byDate)
+        }
+    }
+    
+    func showNewTodoAlertController() {
+        let newTodoAlertController = UIAlertController(title: "New Task", message: "What do you want to accomplish?", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Add", style: .default) { _ in
+            if let field = newTodoAlertController.textFields![0].text {
+                if field.characters.count < 1 {
+                    let newTodo: Todo = Todo()
+                    newTodo.title = field
+                    RealmHelper.addTodo(todo: newTodo)
+                    
+                    self.todos = RealmHelper.getTodos(sorted: .byDate)
+                }
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in }
+        
+        newTodoAlertController.addAction(confirmAction)
+        newTodoAlertController.addAction(cancelAction)
+        
+        newTodoAlertController.addTextField { textfield in
+            textfield.placeholder = "Finish the Fitsapp Swift assignment"
+        }
+        
+        self.present(newTodoAlertController, animated: true, completion: nil)
     }
 
 }
