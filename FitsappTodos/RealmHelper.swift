@@ -46,7 +46,6 @@ class RealmHelper {
             if let searchString = nameContains {
                 todos = todos.filter("title CONTAINS \(searchString)")
             }
-            dump(todos)
             return todos
       }
 }
