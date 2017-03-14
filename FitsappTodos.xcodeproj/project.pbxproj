@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F305B931E775CFB00F9AAE5 /* TodoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F305B921E775CFB00F9AAE5 /* TodoItemTableViewCell.swift */; };
+		3F305B961E77E66900F9AAE5 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F305B951E77E66900F9AAE5 /* RealmHelper.swift */; };
+		3F305B981E77E71200F9AAE5 /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F305B971E77E71200F9AAE5 /* TodoListTableViewController.swift */; };
+		3F305B9A1E77E72E00F9AAE5 /* TodoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F305B991E77E72E00F9AAE5 /* TodoItemViewController.swift */; };
 		3F44DCBE1E76FDE5009398D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F44DCBD1E76FDE5009398D8 /* AppDelegate.swift */; };
-		3F44DCC01E76FDE5009398D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F44DCBF1E76FDE5009398D8 /* ViewController.swift */; };
 		3F44DCC31E76FDE5009398D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F44DCC11E76FDE5009398D8 /* Main.storyboard */; };
 		3F44DCC51E76FDE5009398D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F44DCC41E76FDE5009398D8 /* Assets.xcassets */; };
 		3F44DCC81E76FDE5009398D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F44DCC61E76FDE5009398D8 /* LaunchScreen.storyboard */; };
@@ -17,9 +20,12 @@
 
 /* Begin PBXFileReference section */
 		399BCBD5C7EE2E18FD2A6FB8 /* Pods-FitsappTodos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitsappTodos.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitsappTodos/Pods-FitsappTodos.release.xcconfig"; sourceTree = "<group>"; };
+		3F305B921E775CFB00F9AAE5 /* TodoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemTableViewCell.swift; sourceTree = "<group>"; };
+		3F305B951E77E66900F9AAE5 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		3F305B971E77E71200F9AAE5 /* TodoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoListTableViewController.swift; path = ../TodoListTableViewController.swift; sourceTree = "<group>"; };
+		3F305B991E77E72E00F9AAE5 /* TodoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoItemViewController.swift; path = ../TodoItemViewController.swift; sourceTree = "<group>"; };
 		3F44DCBA1E76FDE5009398D8 /* FitsappTodos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitsappTodos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F44DCBD1E76FDE5009398D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F44DCBF1E76FDE5009398D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F44DCC21E76FDE5009398D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F44DCC41E76FDE5009398D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F44DCC71E76FDE5009398D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +54,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3F305B8F1E775C6A00F9AAE5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3F44DCBD1E76FDE5009398D8 /* AppDelegate.swift */,
+				3F305B951E77E66900F9AAE5 /* RealmHelper.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		3F305B901E775C7D00F9AAE5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F305B991E77E72E00F9AAE5 /* TodoItemViewController.swift */,
+				3F305B971E77E71200F9AAE5 /* TodoListTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3F305B911E775C8600F9AAE5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F305B921E775CFB00F9AAE5 /* TodoItemTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3F305B941E775DA100F9AAE5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3F44DCC11E76FDE5009398D8 /* Main.storyboard */,
+				3F44DCC61E76FDE5009398D8 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		3F44DCB11E76FDE5009398D8 = {
 			isa = PBXGroup;
 			children = (
@@ -69,11 +110,11 @@
 		3F44DCBC1E76FDE5009398D8 /* FitsappTodos */ = {
 			isa = PBXGroup;
 			children = (
-				3F44DCBD1E76FDE5009398D8 /* AppDelegate.swift */,
-				3F44DCBF1E76FDE5009398D8 /* ViewController.swift */,
-				3F44DCC11E76FDE5009398D8 /* Main.storyboard */,
+				3F305B941E775DA100F9AAE5 /* Storyboards */,
+				3F305B911E775C8600F9AAE5 /* Views */,
+				3F305B901E775C7D00F9AAE5 /* Controllers */,
+				3F305B8F1E775C6A00F9AAE5 /* Helper */,
 				3F44DCC41E76FDE5009398D8 /* Assets.xcassets */,
-				3F44DCC61E76FDE5009398D8 /* LaunchScreen.storyboard */,
 				3F44DCC91E76FDE6009398D8 /* Info.plist */,
 			);
 			path = FitsappTodos;
@@ -212,8 +253,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F44DCC01E76FDE5009398D8 /* ViewController.swift in Sources */,
+				3F305B961E77E66900F9AAE5 /* RealmHelper.swift in Sources */,
+				3F305B9A1E77E72E00F9AAE5 /* TodoItemViewController.swift in Sources */,
 				3F44DCBE1E76FDE5009398D8 /* AppDelegate.swift in Sources */,
+				3F305B931E775CFB00F9AAE5 /* TodoItemTableViewCell.swift in Sources */,
+				3F305B981E77E71200F9AAE5 /* TodoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +380,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 84FFB16BC4097E0C6CD425BD /* Pods-FitsappTodos.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CX3J8KNDJA;
 				INFOPLIST_FILE = FitsappTodos/Info.plist;
@@ -350,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 399BCBD5C7EE2E18FD2A6FB8 /* Pods-FitsappTodos.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CX3J8KNDJA;
 				INFOPLIST_FILE = FitsappTodos/Info.plist;
@@ -379,6 +425,7 @@
 				3F44DCCE1E76FDE6009398D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
