@@ -39,10 +39,14 @@ class RealmHelper {
             }
       }
       
-      static func getTodos(sorted sortMethod: TodoSortMethod?) -> (Results<Todo>) {
+    static func getTodos(sorted sortMethod: TodoSortMethod, nameContains: String?) -> (Results<Todo>) {
             let realm = try! Realm()
             let sortKeyPath = sortMethod == .byDate ? "modificationDate" : "priority"
-            let todos = realm.objects(Todo.self).sorted(byKeyPath: sortKeyPath, ascending: false)
+            var todos = realm.objects(Todo.self).sorted(byKeyPath: sortKeyPath, ascending: false)
+            if let searchString = nameContains {
+                todos = todos.filter("title CONTAINS \(searchString)")
+            }
+            dump(todos)
             return todos
       }
 }
