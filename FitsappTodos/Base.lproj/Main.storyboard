@@ -23,11 +23,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ugk-Mt-Y85" id="iT1-PM-HSV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Test Todo Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bS3-Aa-eSa">
-                                            <rect key="frame" x="8" y="12" width="359" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Todo Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bS3-Aa-eSa">
+                                            <rect key="frame" x="16" y="12" width="359" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="tmD-tX-yeV"/>
                                             </constraints>
@@ -36,7 +36,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arL-Wr-xLz">
-                                            <rect key="frame" x="8" y="43" width="359" height="24"/>
+                                            <rect key="frame" x="16" y="43" width="351" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="CgW-YZ-QIZ"/>
                                             </constraints>
@@ -44,20 +44,40 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tt9-0a-Trp">
+                                            <rect key="frame" x="289" y="20" width="80" height="32"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="JJm-6t-GgW"/>
+                                                <constraint firstAttribute="width" constant="80" id="Qb3-Cf-DJV"/>
+                                            </constraints>
+                                            <state key="normal" title="No Prio">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="todoPriorityButton:" destination="Ugk-Mt-Y85" eventType="touchUpInside" id="68y-O6-97c"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="bS3-Aa-eSa" firstAttribute="top" secondItem="iT1-PM-HSV" secondAttribute="topMargin" constant="4" id="27c-9r-SHh"/>
+                                        <constraint firstItem="tt9-0a-Trp" firstAttribute="centerY" secondItem="iT1-PM-HSV" secondAttribute="centerY" id="C21-Rd-qK1"/>
                                         <constraint firstItem="bS3-Aa-eSa" firstAttribute="leading" secondItem="iT1-PM-HSV" secondAttribute="leadingMargin" constant="8" id="C8r-BC-tHZ"/>
                                         <constraint firstAttribute="bottom" secondItem="arL-Wr-xLz" secondAttribute="bottom" constant="4" id="CjM-X1-Zd3"/>
                                         <constraint firstItem="bS3-Aa-eSa" firstAttribute="trailing" secondItem="iT1-PM-HSV" secondAttribute="trailingMargin" constant="8" id="E9X-mp-VM2"/>
                                         <constraint firstAttribute="trailing" secondItem="arL-Wr-xLz" secondAttribute="trailing" constant="8" id="K1S-jX-QMx"/>
-                                        <constraint firstItem="arL-Wr-xLz" firstAttribute="leading" secondItem="iT1-PM-HSV" secondAttribute="leading" constant="8" id="UYt-je-lex"/>
+                                        <constraint firstItem="arL-Wr-xLz" firstAttribute="leading" secondItem="iT1-PM-HSV" secondAttribute="leading" constant="16" id="UYt-je-lex"/>
+                                        <constraint firstItem="tt9-0a-Trp" firstAttribute="trailing" secondItem="iT1-PM-HSV" secondAttribute="trailingMargin" constant="-8" id="a6S-gW-A5Z"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="todoDateLabel" destination="arL-Wr-xLz" id="ZXC-Rh-dPN"/>
                                     <outlet property="todoTitleLabel" destination="bS3-Aa-eSa" id="0sz-aW-Klm"/>
-                                    <segue destination="Qu3-6f-hEM" kind="show" id="zT1-ZD-gQu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,33 +91,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1DI-jR-6eI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="216.80000000000001" y="47.226386806596707"/>
-        </scene>
-        <!--TodoItemVC-->
-        <scene sceneID="1Ov-R3-uSK">
-            <objects>
-                <viewController title="TodoItemVC" id="Qu3-6f-hEM" customClass="TodoItemViewController" customModule="FitsappTodos" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="U9g-sW-R5t"/>
-                        <viewControllerLayoutGuide type="bottom" id="vl3-R8-JQn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EM7-Zr-c4q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLR-Po-HIz">
-                                <rect key="frame" x="166" y="275" width="33" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zw4-v0-Cye" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1252" y="38.23088455772114"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wDC-lK-2JP">

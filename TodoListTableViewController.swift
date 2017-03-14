@@ -32,7 +32,6 @@ class TodoListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return todos.count
     }
 
@@ -59,13 +58,12 @@ class TodoListTableViewController: UITableViewController {
         
         let confirmAction = UIAlertAction(title: "Add", style: .default) { _ in
             if let field = newTodoAlertController.textFields![0].text {
-                if field.characters.count < 1 {
-                    let newTodo: Todo = Todo()
-                    newTodo.title = field
-                    RealmHelper.addTodo(todo: newTodo)
-                    
-                    self.todos = RealmHelper.getTodos(sorted: .byDate)
-                }
+                let newTodo: Todo = Todo()
+                newTodo.title = field
+                RealmHelper.addTodo(todo: newTodo)
+                
+                self.todos = RealmHelper.getTodos(sorted: .byDate)
+                dump(self.todos)
             }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in }

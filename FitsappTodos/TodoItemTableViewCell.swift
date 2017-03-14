@@ -9,6 +9,9 @@
 import UIKit
 
 class TodoItemTableViewCell: UITableViewCell {
-  @IBOutlet weak var todoTitleLabel: UILabel!
-  @IBOutlet weak var todoDateLabel: UILabel!
+    @IBOutlet weak var todoTitleLabel: UILabel!
+    @IBOutlet weak var todoDateLabel: UILabel!
+    @IBAction func todoPriorityButton(_ sender: Any) {
+        
+    }
 }
