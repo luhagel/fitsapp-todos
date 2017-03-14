@@ -42,6 +42,13 @@ class TodoListTableViewController: UITableViewController {
 
         cell.todoTitleLabel.text = todo.title
         cell.todoDateLabel.text = todo.modificationDate.shortDate
+        
+        let todoPriority: Int = todo.priority.rawValue
+        cell.todoItem = todo
+        
+        setupPriorityButtonAttributes(cell: cell, priority: todoPriority)
+        
+        cell.delegate = self
 
         return cell
     }
@@ -77,5 +84,65 @@ class TodoListTableViewController: UITableViewController {
         
         self.present(newTodoAlertController, animated: true, completion: nil)
     }
-
+    
+    func setupPriorityButtonAttributes(cell: TodoItemTableViewCell, priority: Int) {
+        switch(priority) {
+        case 0:
+            cell.todoPriorityButton.setTitle("No Prio", for: .normal) //TODO: Refactor to have different state by priority?
+            cell.todoPriorityButton.backgroundColor = .black
+        case 1:
+            cell.todoPriorityButton.setTitle("Low", for: .normal) //TODO: Refactor to have different state by priority?
+            cell.todoPriorityButton.backgroundColor = .green
+        case 2:
+            cell.todoPriorityButton.setTitle("Med", for: .normal) //TODO: Refactor to have different state by priority?
+            cell.todoPriorityButton.backgroundColor = .yellow
+        case 3:
+            cell.todoPriorityButton.setTitle("High", for: .normal) //TODO: Refactor to have different state by priority?
+            cell.todoPriorityButton.backgroundColor = .red
+        default:
+            return
+        }
+    }
 }
+
+extension TodoListTableViewController: TodoItemTableViewCellDelegate {
+    func cyclePriority(_ sender: TodoItemTableViewCell) {
+        var newPriority = sender.todoItem.priority.rawValue + 1
+        if newPriority > 3 {
+            newPriority = 0
+        }
+        
+        let updatedTodo = Todo()
+        updatedTodo.title = sender.todoItem.title
+        updatedTodo.modificationDate = Date()
+        updatedTodo.priority = Todo.TodoPriority(rawValue: newPriority)!
+        
+        RealmHelper.updateTodo(todoToBeUpdated: sender.todoItem, updatedTodo: updatedTodo)
+        
+        todos = RealmHelper.getTodos(sorted: .byDate)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
