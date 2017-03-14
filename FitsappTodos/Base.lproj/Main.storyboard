@@ -36,7 +36,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arL-Wr-xLz">
-                                            <rect key="frame" x="16" y="43" width="351" height="24"/>
+                                            <rect key="frame" x="16" y="37.5" width="351" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="CgW-YZ-QIZ"/>
                                             </constraints>
@@ -51,6 +51,7 @@
                                                 <constraint firstAttribute="height" constant="32" id="JJm-6t-GgW"/>
                                                 <constraint firstAttribute="width" constant="80" id="Qb3-Cf-DJV"/>
                                             </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <state key="normal" title="No Prio">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -68,7 +69,7 @@
                                         <constraint firstItem="bS3-Aa-eSa" firstAttribute="top" secondItem="iT1-PM-HSV" secondAttribute="topMargin" constant="4" id="27c-9r-SHh"/>
                                         <constraint firstItem="tt9-0a-Trp" firstAttribute="centerY" secondItem="iT1-PM-HSV" secondAttribute="centerY" id="C21-Rd-qK1"/>
                                         <constraint firstItem="bS3-Aa-eSa" firstAttribute="leading" secondItem="iT1-PM-HSV" secondAttribute="leadingMargin" constant="8" id="C8r-BC-tHZ"/>
-                                        <constraint firstAttribute="bottom" secondItem="arL-Wr-xLz" secondAttribute="bottom" constant="4" id="CjM-X1-Zd3"/>
+                                        <constraint firstAttribute="bottom" secondItem="arL-Wr-xLz" secondAttribute="bottom" constant="10" id="CjM-X1-Zd3"/>
                                         <constraint firstItem="bS3-Aa-eSa" firstAttribute="trailing" secondItem="iT1-PM-HSV" secondAttribute="trailingMargin" constant="8" id="E9X-mp-VM2"/>
                                         <constraint firstAttribute="trailing" secondItem="arL-Wr-xLz" secondAttribute="trailing" constant="8" id="K1S-jX-QMx"/>
                                         <constraint firstItem="arL-Wr-xLz" firstAttribute="leading" secondItem="iT1-PM-HSV" secondAttribute="leading" constant="16" id="UYt-je-lex"/>

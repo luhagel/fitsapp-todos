@@ -95,7 +95,7 @@ class TodoListTableViewController: UITableViewController {
             cell.todoPriorityButton.backgroundColor = .green
         case 2:
             cell.todoPriorityButton.setTitle("Med", for: .normal) //TODO: Refactor to have different state by priority?
-            cell.todoPriorityButton.backgroundColor = .yellow
+            cell.todoPriorityButton.backgroundColor = .orange
         case 3:
             cell.todoPriorityButton.setTitle("High", for: .normal) //TODO: Refactor to have different state by priority?
             cell.todoPriorityButton.backgroundColor = .red
@@ -114,7 +114,7 @@ extension TodoListTableViewController: TodoItemTableViewCellDelegate {
         
         let updatedTodo = Todo()
         updatedTodo.title = sender.todoItem.title
-        updatedTodo.modificationDate = Date()
+        updatedTodo.modificationDate = sender.todoItem.modificationDate
         updatedTodo.priority = Todo.TodoPriority(rawValue: newPriority)!
         
         RealmHelper.updateTodo(todoToBeUpdated: sender.todoItem, updatedTodo: updatedTodo)
